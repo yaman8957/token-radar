@@ -8,11 +8,11 @@
 //
 // Implied value follows only from the snapshot's own figures:
 //
-//   growth     = clamp(change_7d, -60, 150) per cent; no reading: 0 and a confidence discount
+//   growth     = clamp(change_7d, -60, 160) per cent; no reading: 0 and a confidence discount
 //   growthMult = 1 + (growth / 100) x growth_weight        when growth is positive
 //                1 + (growth / 100) x growth_weight x downside_weight   when growth is negative
 //   maturity   = 0.42 + sqrt(min(age_days, 1460) / 1460) x 0.58       (age_days unknown: 240)
-//   confidence = 1 when change_7d is reported, else 0.92
+//   confidence = 1 when change_7d is reported, else 0.93
 //   base       = tvl_usd x 0.32
 //   implied    = max(1, round(base x growthMult x maturity x confidence))
 //
@@ -66,12 +66,12 @@ export const MODEL: ModelConstants = {
   growth_weight: 0.75,
   downside_weight: 1.25,
   growth_floor: -60,
-  growth_cap: 150,
+  growth_cap: 160,
   maturity_floor: 0.42,
   maturity_range: 0.58,
   maturity_days: 1460,
   unknown_age_days: 240,
-  unknown_growth_discount: 0.92,
+  unknown_growth_discount: 0.93,
 };
 
 /** The model's version label: the dashboard names it and the rules quote it. */

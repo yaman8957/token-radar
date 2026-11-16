@@ -99,7 +99,7 @@ writeFileSync(join(out, 'dossier.json'), buildDossier(out, { text_max_bytes: TEX
 const median = radar.live_multiple_median;
 process.stdout.write(
   `token radar: ${snapshot.protocols.length} protocols, ${snapshot.watchlist.length} on the watchlist, ${board.length} rows scored (${radar.early_size} early, ${radar.live_size} live set aside)\n` +
-    `token radar: ${MODEL_VERSION} base ${MODEL.base_multiple}x, growth weight ${MODEL.growth_weight}, downside ${MODEL.downside_weight}x, maturity ${MODEL.maturity_floor}-${MODEL.maturity_floor + MODEL.maturity_range} over ${MODEL.maturity_days} days` +
+    `token radar: ${MODEL_VERSION} base ${MODEL.base_multiple}x, growth weight ${MODEL.growth_weight}, growth clamp ${MODEL.growth_floor}..${MODEL.growth_cap}%, downside ${MODEL.downside_weight}x, maturity ${MODEL.maturity_floor}-${MODEL.maturity_floor + MODEL.maturity_range} over ${MODEL.maturity_days} days` +
     (median === null ? '' : `; live median mcap/TVL ${median}x`) +
     '\n' +
     `token radar: wrote ${join(out, 'board.json')}, ${join(out, 'data.js')}, ${join(out, 'dashboard')} (3 files), ${join(out, 'screenshots')} (${shots.length} images) and ${join(out, 'dossier.json')}\n`,

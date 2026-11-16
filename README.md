@@ -23,9 +23,9 @@ implied = round(
 )
 ```
 
-- Growth is clamped to -60% … +150%; negative growth is penalised 1.25x.
+- Growth is clamped to -60% … +160%; negative growth is penalised 1.25x.
 - Maturity uses a square-root curve, so a protocol's first year without a token matters more than its fifth.
-- A missing seven-day reading keeps the row but applies a 0.92 confidence multiplier.
+- A missing seven-day reading keeps the row but applies a 0.93 confidence multiplier.
 - The 0.32x base multiple sits inside the live market's own range: the snapshot's median live
   market-cap/TVL multiple is 0.31x, printed in the page.
 - No protocol name is special-cased.
